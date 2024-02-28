@@ -10,10 +10,10 @@ export class ContactComponent{
   contactUsForm = this.formBuilder.group({
     firstname: ['', Validators.required],
     lastname: ['', Validators.required],
-    email: ['', Validators.required],
+    email: ['', Validators.required, Validators.email],
     comments: ['', Validators.required]
   });
 
   constructor(private formBuilder: FormBuilder){  }
-  
+
 }

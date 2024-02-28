@@ -22,7 +22,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { NgOptimizedImage } from '@angular/common'; 
+import { NgOptimizedImage } from '@angular/common';
+import { TrackComponent } from './track/track.component';
+import { FooterComponent } from './footer/footer.component'; 
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { NgOptimizedImage } from '@angular/common';
     ContactComponent,
     LoginComponent,
     HomeComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    TrackComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

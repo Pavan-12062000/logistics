@@ -1,8 +1,4 @@
 import { Component, NgModule, OnInit, inject } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
-import { CommonModule } from '@angular/common';
 import { CustomLink } from './custom-link';
 import { Route, Router } from '@angular/router';
 

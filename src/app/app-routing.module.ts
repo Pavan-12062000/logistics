@@ -6,11 +6,13 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ServicesComponent } from './services/services.component';
+import { TrackComponent } from './track/track.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent, data: { label: 'Home' } },
   { path: 'about', component: AboutComponent, data: { label: 'About' } },
   { path: 'services', component: ServicesComponent, data: { label: 'Services'}},
+  { path: 'track', component: TrackComponent, data: { label: 'Track Goods'}},
   { path: 'contact', component: ContactComponent, data: { label: 'Contact Us' } },
   { path: 'login', component: LoginComponent, data: { label: 'Login/Register'}},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
