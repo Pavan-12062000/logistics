@@ -1,43 +1,51 @@
 .contact-page {
-    top: 0;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-  }
-  
-  mat-card {
-    width: 30%;
-    margin-top: 6%;
-    margin-left: 35%;
-    border-radius: 8px;
-    opacity: 0.95;
-  }
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
 
-  mat-form-field, mat-checkbox {
-    width: 80%;
-    display: block;
-    margin: auto;
-  }
-  
-  .submit {
-    margin-top: 20px;
-    display: block;
-    width: 80%;
-    margin: 20px auto;
-  }
-  
-  #sect1 {
-    height: 651px;
-    background-size: 100%;
-    background-size: cover;
-    background-image: url("../../assets/images/contactus.png");
-    display: grid;
-    overflow-y: hidden;
-  }
-  
+mat-card {
+  width: 30%;
+  margin-top: 6%;
+  margin-left: 35%;
+  border-radius: 8px;
+  opacity: 0.95;
+}
+
+mat-form-field{
+  width: 80%;
+  display: block;
+  margin: auto;
+}
+
+.submit {
+  margin-top: 20px;
+  display: block;
+  width: 80%;
+  margin: 20px auto;
+}
+
+#sect1 {
+  height: 100vh;
+  background-size: 100%;
+  background-size: cover;
+  background-image: url("../../assets/images/outsourcing-subscription-box-fulfillment.jpg");
+  display: grid;
+  overflow-y: hidden;
+}
+
+.upper{
+  width: 50%;
+  margin-top: 10%;
+  margin-left: 25%;
+  border-radius: 8px;
+  opacity: 0.95;
+  height: 20%;
+}
