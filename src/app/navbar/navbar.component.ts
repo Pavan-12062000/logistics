@@ -1,34 +1,53 @@
-import { Component, NgModule, OnInit, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CustomLink } from './custom-link';
-import { Route, Router } from '@angular/router';
+import { Router, Route } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss',
+  styleUrls: ['./navbar.component.scss'],
 })
-
-export class NavbarComponent implements OnInit{
+export class NavbarComponent implements OnInit {
   background = 'primary';
   links: CustomLink[] = [];
+  isAuthenticated: boolean = false;
+  username: string | null = null;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit(): void {
-    let route: Route;
-    for (route of this.router.config) {
-      let labelData: string | undefined = undefined;
-      if (route.data) {
-        labelData = route.data['label'];
-        if (labelData) {
-          const link: CustomLink = {
-            path: `/${route.path}`,
-            label: labelData,
-          };
-          this.links.push(link);
-        }
+    this.initializeLinks();
+    this.updateAuthStatus();
+
+    this.authService.authStatusChanged.subscribe((status: boolean) => {
+      this.updateAuthStatus();
+    });
+
+    this.authService.usernameChanged.subscribe((username: string | null) => {
+      this.username = username;
+      console.log("Username updated in NavbarComponent:", this.username);
+    });
+  }
+
+  private initializeLinks(): void {
+    for (let route of this.router.config) {
+      if (route.data && route.data['label'] && route.data['label'] != 'Login/Register') {
+        this.links.push({
+          path: `/${route.path}`,
+          label: route.data['label'],
+        });
       }
     }
-    console.log(JSON.stringify(this.links));
+  }
+
+  private updateAuthStatus(): void {
+    this.isAuthenticated = this.authService.isAuthenticated();
+    this.username = this.authService.getUsername();
+  }
+
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
 }

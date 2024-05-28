@@ -2,3 +2,83 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.banner{
+    position: relative;
+}
+
+.banner .owl-prev, .banner .owl-next{
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    background-color: transparent !important;
+}
+
+.banner .owl-prev{
+    left: -7px;
+}
+
+.banner .owl-next{
+    right: -67px;
+}
+
+.banner .owl-prev::before, .banner .owl-next::before{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 110px;
+    height: 110px;
+    background-color:  #ffffff24; 
+    /* #3f51b5; */
+    content: '';
+    border-radius: 50%;
+}
+
+.banner .owl-next::before{
+    right: -110px;
+}
+
+.banner .owl-prev i, .banner .owl-next i{
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.banner .owl-next i{
+    right: -2.5%;
+}
+
+.banner .owl-prev i{
+    left: 80px;
+}
+
+.banner .owl-prev:hover::before, .banner .owl-next:hover::before{
+    background-color: #3f51b5 !important;
+}
+
+.homeCarousel1{
+    background-image: url("./assets/images/homeCarousel1.webp");
+}
+
+.image-container{
+    position: relative;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 40%;
+    color: white;
+    left: 13%;
+    line-height: 1.5;
+}
+
+.side{
+    font-size: 50px;
+}
+
+.desc{
+    font-size: 25px;
+}

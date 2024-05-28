@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
 import { AboutComponent } from './about/about.component';
 import { ServicesComponent } from './services/services.component';
 import { ContactComponent } from './contact/contact.component';
@@ -25,6 +26,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NgOptimizedImage } from '@angular/common';
 import { TrackComponent } from './track/track.component';
 import { FooterComponent } from './footer/footer.component'; 
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { HttpClientModule } from '@angular/common/http';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 
 @NgModule({
@@ -38,7 +42,8 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     PagenotfoundComponent,
     TrackComponent,
-    FooterComponent
+    FooterComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +55,7 @@ import { FooterComponent } from './footer/footer.component';
     MatListModule,
     MatCardModule,
     MatButtonModule,
+    MatMenuModule,
     MatIconModule,
     MatTabsModule,
     MatFormFieldModule,
@@ -57,7 +63,10 @@ import { FooterComponent } from './footer/footer.component';
     MatCheckboxModule,
     FormsModule,
     ReactiveFormsModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    BrowserAnimationsModule,
+    CarouselModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration(),

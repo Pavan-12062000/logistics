@@ -1,35 +1,41 @@
 .login-page {
-    top: 0;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100vh;
-    display: block;
-    background-image: url("../../assets/images/login.webp");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow-y: hidden;
-  }
-  
-  mat-card {
-    width: 30%;
-    margin: 10% auto;
-    border-radius: 8px;
-    opacity: 0.95;
-  }
-  mat-form-field, mat-checkbox {
-    width: 80%;
-    display: block;
-    margin: auto;
-  }
-  mat-card-content {
-    margin-top: 20px;
-  }
-  
-  .login {
-    margin-top: 20px;
-    display: block;
-    width: 80%;
-    margin: 20px auto;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../assets/images/login.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-y: hidden;
+}
+
+mat-card {
+  width: 30%;
+  border-radius: 8px;
+  opacity: 0.95;
+}
+
+mat-form-field, mat-checkbox {
+  width: 80%;
+  display: block;
+  margin: auto;
+}
+
+mat-card-content {
+  margin-top: 20px;
+}
+
+.login {
+  margin-top: 20px;
+  display: block;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 1%;
+}

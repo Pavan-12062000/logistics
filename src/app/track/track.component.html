@@ -1,48 +1,48 @@
 <div class="section1">
-    <div class="track">
-        <mat-card >
-            <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
-                <mat-tab label="Track Your Order">
-                    <mat-card-content>
-                        <form [formGroup]="TrackOrder" actions="">
-                            <mat-form-field>
-                                <input 
-                                matInput
-                                placeholder="Enter Tracking ID*"
-                                required
-                                name="trackingid"
-                                ngModel
-                                formControlName="trackingid"
-                                >
-                            </mat-form-field>
-                            <mat-form-field>
-                                <input 
-                                matInput
-                                placeholder="Enter Email ID*    "
-                                required
-                                name="email"
-                                ngModel
-                                formControlName="email"
-                                >
-                            </mat-form-field>
-                            <button
-                                mat-raised-button
-                                color="primary"
-                                class="submit"
-                                onclick="getStatus(trackingid)">
-                                Track Order
-                            </button>
-                        </form>
-                    </mat-card-content>
-                </mat-tab>
-            </mat-tab-group>
-        </mat-card>
-    </div>
-    <div class="container">
-        <span *ngFor="let item of counts; let i=index">
-            <span class="circle-desc" [class.circle-desc-active]="orderStatus == item">{{ item }}</span>
-            <span class="circles" [class.active]="orderStatus == item"></span>
-            <span class="bar" *ngIf="(i != counts.length-1)"></span>
-        </span>
-    </div>
+  <div class="track">
+    <mat-card>
+      <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+        <mat-tab label="Track Your Order">
+          <mat-card-content>
+            <form (ngSubmit)="submitTrackForm($event)">
+              <mat-form-field>
+                <input 
+                  matInput
+                  placeholder="Enter Tracking ID*"
+                  required
+                  name="trackingid"
+                  [(ngModel)]="trackingId"
+                  #trackingid="ngModel"
+                  pattern="^\d{10}$"> 
+              </mat-form-field>
+              <mat-form-field>
+                <input 
+                  matInput
+                  placeholder="Enter Email ID*"
+                  required
+                  name="email"
+                  [(ngModel)]="trackEmail"
+                  #email="ngModel">
+              </mat-form-field>
+              <button
+                mat-raised-button
+                color="primary"
+                class="submit"
+                type="submit">
+                Track Order
+              </button>
+            </form>
+          </mat-card-content>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card>
+    <app-notification [message]="notificationMessage" [type]="notificationType" *ngIf="showNotification"></app-notification>
+  </div>
+  <div class="container">
+    <span *ngFor="let item of counts; let i=index">
+      <span class="circle-desc" [class.circle-desc-active]="orderStatus == item">{{ item }}</span>
+      <span class="circles" [class.active]="orderStatus == item"></span>
+      <span class="bar" *ngIf="(i != counts.length-1)"></span>
+    </span>
+  </div>
 </div>
