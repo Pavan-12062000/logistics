@@ -35,12 +35,3 @@ mat-form-field {
   display: grid;
   overflow-y: hidden;
 }
-
-.upper{
-  width: 50%;
-  margin-top: 10%;
-  margin-left: 25%;
-  border-radius: 8px;
-  opacity: 0.95;
-  height: 20%;
-}

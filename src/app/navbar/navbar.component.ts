@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomLink } from './custom-link';
-import { Router, Route } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -32,7 +32,7 @@ export class NavbarComponent implements OnInit {
 
   private initializeLinks(): void {
     for (let route of this.router.config) {
-      if (route.data && route.data['label'] && route.data['label'] != 'Login/Register') {
+      if (route.data && route.data['label']) {
         this.links.push({
           path: `/${route.path}`,
           label: route.data['label'],
@@ -49,5 +49,9 @@ export class NavbarComponent implements OnInit {
   logout(): void {
     this.authService.logout();
     this.router.navigate(['/login']);
+  }
+
+  profile(): void {
+    this.router.navigate(['/profile']);
   }
 }

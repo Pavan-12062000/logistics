@@ -1,0 +1,108 @@
+/* Profile Page Styling */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+  }
+  
+  .profile-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .profile-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Profile Image Styling */
+  .profile-image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #4CAF50;
+    animation: bounce-in 1s ease-in-out;
+  }
+  
+  /* Bounce-in animation for image */
+  @keyframes bounce-in {
+    0% {
+      transform: scale(0.3);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* User Name Styling */
+  .user-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+    margin: 20px 0 10px;
+  }
+  
+  /* Role Styling */
+  .user-role {
+    font-size: 16px;
+    font-style: italic;
+    color: #777777;
+  }
+  
+  /* Edit Button Styling */
+  .edit-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+  }
+  
+  .edit-btn:hover {
+    background-color: #45a049;
+  }
+  
+  /* Profile Details Styling */
+  .profile-details h3 {
+    font-size: 18px;
+    color: #4CAF50;
+    margin-bottom: 10px;
+  }
+  
+  .profile-details p {
+    font-size: 14px;
+    color: #555555;
+    margin: 5px 0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .profile-card {
+      width: 300px;
+      padding: 20px;
+    }
+  
+    .profile-image img {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .user-name {
+      font-size: 20px;
+    }
+  }
+  

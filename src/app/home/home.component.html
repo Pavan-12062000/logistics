@@ -42,7 +42,7 @@
 
 <div class="outer1">
     <div class="top">
-        <p>Safe, Faster And Reliable</p><br>
+        <p>Safe, Faster And Reliable</p>
         <p>Logistic Services</p>
     </div>
 </div>
@@ -50,7 +50,7 @@
 <mat-card class="home-card">
     <mat-card-content class="home-card-content">
       <img mat-card-image
-        src="../../assets/images/home2.jpg">
+        src="../../assets/images/home.jpg">
       <div>
         <a class="heading"> Safe and Faster Logistics Service Near You </a>
         <a class="content">
@@ -73,13 +73,13 @@
                 Not only can we rate shop between major carriers but also their service levels and special options.</a>
         </div>
         <div class="box">
-            <img src="../../assets/images/shipping-fast-delivery-man-riding-260nw-1202545720.jpg" style="height: 100%; width: 30%;">
+            <img src="../../assets/images/sameDayShipping.jpg" style="height: 100%; width: 30%;">
             <a class="commit1"><b>Same Day Shipping</b>
                 <br><br>
                  Orders are delivered the next day before 6:00pm.</a>
         </div>
         <div class="box">
-            <img src="../../assets/images/shipping-cost-icon-black-sign-vector-35227414.jpg" style="height: 100%; width: 30%;">
+            <img src="../../assets/images/lowCostShipment.jpg" style="height: 100%; width: 30%;">
             <a class="commit1"><b>Low Cost Shipment</b></a>
         </div>
     </div>
@@ -92,40 +92,73 @@
     <div class="container even-columns">
         <div class="box1">
             <div class="commit1">
-                <p class="start"><b>1,800,000</b></p>
+                <p class="start" id="count1"><b>0</b></p>
                 <p class="end"><br>Over 1.8 million time-critical shipments handled per year.</p>
             </div>
         </div>
         <div class="box1">
             <div class="commit1">
-                <p class="start"><b>99.8%</b></p>
+                <p class="start" id="count2"><b>0</b></p>
                 <p class="end"><br>99.8% delivery accuracy.</p>
             </div>
         </div>
         <div class="box1">
             <div class="commit1">
-                <p class="start"><b>50</b></p>
+                <p class="start" id="count3"><b>0</b></p>
                 <p class="end"><br>Over 50 active flights per week.</p>
             </div>
         </div>
         <div class="box1">
             <div class="commit1">
-                <p class="start"><b>14</b></p>
+                <p class="start" id="count4"><b>0</b></p>
                 <p class="end"><br> 14 Service centres.</p>
             </div>
         </div>
+        
     </div>
 </div>
 
 <div class="outer2">
     <div class="container1 even-columns">
         <div class="box">
-            <img src="../../assets/images/contact-us-20.png" style="height: 80%; width: 25%;">
+            <img src="../../assets/images/contactUsHome.png" style="height: 80%; width: 25%;">
             <a href="contact" class="contact">Contact US</a>
         </div>
         <div class="box">
-            <img src="../../assets/images/4465439-200.png" style="height: 80%; width: 30%;">
-            <a href="services" class="contact">Get a Quote!</a>
+            <img src="../../assets/images/getaquote.png" style="height: 80%; width: 30%;">
+            <a href="getaquote" class="contact">Get a Quote!</a>
+        </div>
+        <div class="box">
+            <img src="../../assets/images/bookAShipment-homepage.webp" style="height: 80%; width: 30%;">
+            <a href="bookaservice" class="contact">Book a Shipment!</a>
         </div>
     </div>
 </div>
+
+<div class="services-section">
+    <h2><b>Our Services</b></h2>
+    <div class="service-container">
+        <div class="service-box" (click) = "redirectToBookService('Express Delivery')">
+        <img src="../../assets/images/expressDelivery.avif" alt="Service 1">
+        <h3>Delivery and Express Delivery</h3>
+        <p>Fast, reliable, and secure delivery solutions for your business.</p>
+        </div>
+        <div class="service-box" (click) = "redirectToBookService('International Shipping')">
+        <img src="../../assets/images/internationalShipping.jpg" alt="Service 2">
+        <h3>International Shipping</h3>
+        <p>Global shipping services with on-time delivery guarantee.</p>
+        </div>
+    </div>
+</div>
+  
+<section class="testimonials">
+    <h2><b>What Our Clients Say</b></h2>
+    <owl-carousel-o [options]="testimonialsSlider">
+      <ng-template carouselSlide *ngFor="let testimonial of testimonials">
+        <div class="testimonial-box">
+          <p>"{{testimonial.message}}"</p>
+          <span>- {{testimonial.name}}</span>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </section>
