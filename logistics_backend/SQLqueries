@@ -1,0 +1,9 @@
+user_details:
+    CREATE TABLE IF NOT EXISTS public.user_details
+    (
+        id integer NOT NULL DEFAULT nextval('user_details_id_seq'::regclass),
+        username character(50) COLLATE pg_catalog."default" NOT NULL,
+        email character(50) COLLATE pg_catalog."default" NOT NULL,
+        password character(50) COLLATE pg_catalog."default" NOT NULL,
+        CONSTRAINT user_details_pkey PRIMARY KEY (id)
+    )
