@@ -12,7 +12,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { AboutComponent } from './about/about.component';
-import { ServicesComponent } from './services/services.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
@@ -29,6 +28,12 @@ import { FooterComponent } from './footer/footer.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { HttpClientModule } from '@angular/common/http';
 import { NotificationsComponent } from './notifications/notifications.component';
+import { ShippingComponent } from './shipping/shipping.component';
+import { GetaquoteComponent } from './getaquote/getaquote.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
+import { ProfileComponent } from './profile/profile.component';
+import { BookServiceComponent } from './book-service/book-service.component';
 
 
 @NgModule({
@@ -36,14 +41,17 @@ import { NotificationsComponent } from './notifications/notifications.component'
     AppComponent,
     NavbarComponent,
     AboutComponent,
-    ServicesComponent,
     ContactComponent,
     LoginComponent,
     HomeComponent,
     PagenotfoundComponent,
     TrackComponent,
     FooterComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    ShippingComponent,
+    GetaquoteComponent,
+    ProfileComponent,
+    BookServiceComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +74,9 @@ import { NotificationsComponent } from './notifications/notifications.component'
     NgOptimizedImage,
     BrowserAnimationsModule,
     CarouselModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule,
+    MatOptionModule
   ],
   providers: [
     provideClientHydration(),

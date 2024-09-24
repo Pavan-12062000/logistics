@@ -1,19 +1,18 @@
 <div class="back">
-    <div style="color: white;">
-        <div class="about">
-            <a id="head1"><b>About Us</b></a>
-            <a id="body1">
-                Our people are the best! Okay, we may be partial, but suffice it to say that we
-                know just how important people are in this process. We invest highly in our
-                team and keep them up to date with the latest and greatest training.
-            </a><br>
-            <a id="body1">
-                Your dedicated client success manager will work closely with you to ensure
-                flawless service and personalized attention. We know that as your fulfillment
-                provider we are an extension of your thriving ecommerce business.
-            </a>
-        </div>
+    <div class="box about-box">
+        <h2 id="head1"><b>About Us</b></h2>
+        <p id="body1">
+            Our people are the best! Okay, we may be partial, but suffice it to say that we
+            know just how important people are in this process. We invest highly in our
+            team and keep them up to date with the latest and greatest training.
+        </p>
+        <p id="body1">
+            Your dedicated client success manager will work closely with you to ensure
+            flawless service and personalized attention. We know that as your fulfillment
+            provider we are an extension of your thriving ecommerce business.
+        </p>
     </div>
+    
     <div class="container even-columns">
         <div class="box">
             <a id="head"><b>Our Mission</b></a>
@@ -38,10 +37,12 @@
 
 <mat-card class="home-card">
     <mat-card-content class="home-card-content">
-      <img mat-card-image
-        src="../../assets/images/man-lifting-wooden-boxes-with-forklift_1308-8007.avif">
-      <div>
-        <a id="heading"><b>Trusted Digital Shipping From 1998 </b></a>
+      <div class="image-container">
+        <img mat-card-image
+          src="../../assets/images/about2.avif">
+      </div>
+      <div class="text-container">
+        <a id="heading"><b>Trusted Digital Shipping From 1998</b></a>
         <a id="content">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua cillum dolore 
@@ -49,15 +50,37 @@
         </a>
       </div>
     </mat-card-content>
-</mat-card> 
+</mat-card>
 
-<div class="subscribe">
-    <div class="box1">
+<form #subscribeForm="ngForm" (ngSubmit)="subscribed(subscribeForm)">
+    <div class="subscribe">
+      <div class="box1">
         <a id="subsbox">Subscribe to our newsletter:</a>
-        <input type="text" placeholder="Enter your Email ID ">
-        <button class="sub">Subscribe</button>
+  
+        <!-- Input field with required and email validation -->
+        <input
+          type="text"
+          [(ngModel)]="email"
+          #emailInput="ngModel"
+          name="email"
+          placeholder="Enter your Email ID"
+          required
+          email
+        />
+  
+        <!-- Display validation error messages -->
+        <div *ngIf="emailInput.invalid && (emailInput.touched || subscribeForm.submitted)" style="color: red;">
+          <span *ngIf="emailInput.errors?.['required']">Email is required.</span>
+          <span *ngIf="emailInput.errors?.['email']">Please enter a valid email address.</span>
+        </div>
+  
+        <button class="sub" type="submit">Subscribe</button>
+      </div>
     </div>
-</div>
+  </form>
+  
+  
+
 
 <div class="social">
     <a>Find Us on</a>
@@ -65,12 +88,12 @@
 
 <div class="container1 even-columns">
     <div class="box">
-        <img src="../../assets/images/Instagram_logo_2016.svg.webp">
+        <img src="../../assets/images/Instagram.webp">
     </div>
     <div class="box">
-        <img src="../../assets/images/2023_Facebook_icon.svg.webp">
+        <img src="../../assets/images/facebook.webp">
     </div>
     <div class="box">
-        <img src="../../assets/images/new-2023-twitter-logo-x-icon-design_1017-45418.avif">
+        <img src="../../assets/images/twitter.avif">
     </div>
 </div>

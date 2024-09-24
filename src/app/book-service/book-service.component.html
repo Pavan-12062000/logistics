@@ -1,0 +1,97 @@
+<div class="booking-container">
+    <h1>Book a Shipment</h1>
+    <form #bookingForm="ngForm" (ngSubmit)="bookService(bookingForm)" class="booking-form">
+        
+        <!-- Service Type Dropdown -->
+        <div class="form-group">
+            <label for="serviceType">Select a Service:</label>  
+            <select id="serviceType" name="serviceType" [(ngModel)]="selectedServiceType" (change)="onServiceTypeChange($event)" required class="form-control">
+                <option value="" disabled selected>Select a Service</option>
+                <option *ngFor="let type of serviceTypes" [value]="type">{{ type }}</option>
+            </select>
+            <div class="error" *ngIf="bookingForm.controls['serviceType']?.invalid && bookingForm.controls['serviceType']?.touched">
+                Service Type is required.
+            </div>
+        </div>
+
+        <!-- Additional Pickup and Delivery fields for International Shipping -->
+        <div *ngIf="selectedServiceType === 'International Shipping'" class="additional-fields">
+            <!-- Pickup Address with additional fields -->
+            <div class="form-group">
+                <label for="pickupCountry">Pickup Country:</label>
+                <select id="pickupCountry" name="pickupCountry" [(ngModel)]="selectedPickupCountry" (change)="onPickupCountryChange($event)" required class="form-control">
+                    <option value="" disabled selected>Select a Country</option>
+                    <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="pickupState">Pickup State/Province:</label>
+                <input id="pickupState" name="pickupState" placeholder="Required*" ngModel required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="pickupCity">Pickup City:</label>
+                <input id="pickupCity" name="pickupCity" placeholder="Required*" ngModel required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="pickupPin">Pickup Pin Code:</label>
+                <input id="pickupPin" name="pickupPin" placeholder="Required*" ngModel required class="form-control">
+            </div>
+
+            <!-- Delivery Address with additional fields and restricted country selection -->
+            <div class="form-group">
+                <label for="deliveryCountry">Delivery Country:</label>
+                <select id="deliveryCountry" name="deliveryCountry" ngModel required class="form-control">
+                    <option value="" disabled selected>Select a Country</option>
+                    <option *ngFor="let country of countries" [value]="country" [disabled]="country === selectedPickupCountry">{{ country }}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="deliveryState">Delivery State/Province:</label>
+                <input id="deliveryState" name="deliveryState" placeholder="Required*" ngModel required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="deliveryCity">Delivery City:</label>
+                <input id="deliveryCity" name="deliveryCity" placeholder="Required*" ngModel required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="deliveryPin">Delivery Pin Code:</label>
+                <input id="deliveryPin" name="deliveryPin" placeholder="Required*" ngModel required class="form-control">
+            </div>
+        </div>
+
+        <!-- Other fields remain the same -->
+        <div class="form-group">
+            <label for="recipientName">Recipient Name:</label>
+            <input id="recipientName" name="recipientName" placeholder="Required*" ngModel required class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="pickupAddress">Pickup Address:</label>
+            <input id="pickupAddress" name="pickupAddress" placeholder="Required*" required class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="deliveryAddress">Delivery Address:</label>
+            <input id="deliveryAddress" name="deliveryAddress" placeholder="Required*" ngModel required class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="weight">Weight:</label>
+            <input id="weight" name="weight" placeholder="Required*" ngModel required class="form-control">
+        </div>
+
+        <!-- Checkboxes -->
+        <div class="checkbox-group">
+            <label class="checkbox-container">
+                <input type="checkbox" name="fragileTag" ngModel>
+                <span class="checkbox-label">Fragile Tag</span>
+            </label>
+            <label class="checkbox-container">
+                <input type="checkbox" name="confidential" ngModel>
+                <span class="checkbox-label">Confidential</span>
+            </label>
+        </div>
+
+        <button type="submit" [disabled]="bookingForm.invalid">Book Now</button>
+    </form>
+</div>

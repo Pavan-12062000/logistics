@@ -1,15 +1,25 @@
-.section1{
+/* .section1{
     height: 100vh;
     background-size: 100%;
     background-size: cover;
     background-image: url("../../assets/images/track-order.svg");
     display: grid;
     overflow-y: hidden;
-}
+} */
+
+.section1 {
+    height: 100vh;
+    background-size: cover;
+    display: grid;
+    overflow-y: hidden;
+    background-image: url("../../assets/images/track-order.svg");
+    background-size: 100%;
+    background-size: cover;
+  }
 
 mat-card {
     width: 30%;
-    margin-top: 6%;
+    margin-top: 4%;
     margin-left: 35%;
     border-radius: 8px;
     opacity: 0.95;
@@ -39,51 +49,173 @@ mat-tab-group{
 }
 
 .submit {
-    margin-top: 20px;
+    margin-top: 10px; /* Reduced margin-top */
     display: block;
     width: 80%;
-    margin: 20px auto;
+    margin: 10px auto; /* Adjusted margin to reduce space */
 }
 
-.container{
-    min-width:320px;
-    /* margin: "0px auto"; */
-    text-align: center;
+  /* Dynamic classes applied through ngClass */
+  .input-error {
+    border: 2px solid red;
+  }
+  
+  .input-success {
+    border: 2px solid green;
+  }
+  
+  .button-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+.stepper-horizontal {
+    display: table;
+    width: 100%;
 }
 
-.circle-desc-active{
-    font-weight: bold;
-}
-
-.circles{
-    height: 0.938em;
-    width: 0.938em;
-    border: 0.188em solid #000;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.bar{
-    width: 16%;
-    height: 0.063em;
-    margin-bottom:0.469em;
-    border: 0.031em solid #000;
-    color:#000;
-    background-color:#000;
-    display: inline-block;
-    text-align:center;
-    margin:"0 auto";
-}
-
-.active{
-    background-color:#ffa500;
-}
-
-.circle-desc{
+.stepper-horizontal .step {
+    display: table-cell;
     position: relative;
-    font-size: 1.125em;
-    width: auto;
-    max-width:9.375em;
-    margin-left:-0.750em;
+    padding: 1.5rem;
+    z-index: 2;
+    width: 16.67%; /* Adjust width to ensure equal spacing across all steps */
 }
 
+.stepper-horizontal .step:last-child .step-bar-left,
+.stepper-horizontal .step:last-child .step-bar-right {
+    display: none;
+}
+
+.stepper-horizontal .step .step-circle {
+    width: 2rem;
+    height: 2rem;
+    margin: 0 auto;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 1.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    z-index: 2;
+    border: 2px solid #D9E2EC;
+}
+
+.stepper-horizontal .step.done .step-circle {
+    background-color: #199473;
+    border: 2px solid #199473;
+    color: #FFFFFF;
+}
+
+.stepper-horizontal .step.done .step-circle:before {
+    font-family: 'FontAwesome';
+    font-weight: 100;
+    content: "\f00c";
+}
+
+.stepper-horizontal .step.done .step-circle * {
+    display: none;
+}
+
+.stepper-horizontal .step.done .step-title {
+    color: #102A43;
+}
+
+.stepper-horizontal .step.editing .step-circle {
+    background: #ffffff;
+    border-color: #199473;
+    color: #199473;
+}
+
+.stepper-horizontal .step.editing .step-title {
+    color: #199473;
+    text-decoration: underline;
+}
+
+.stepper-horizontal .step .step-title {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.stepper-horizontal .step .step-title,
+.stepper-horizontal .step .step-optional {
+    text-align: center;
+    color: #829AB1;
+}
+
+.stepper-horizontal .step .step-optional {
+    font-size: 0.75rem;
+    font-style: italic;
+    color: #9FB3C8;
+}
+
+.stepper-horizontal .step .step-bar-left,
+.stepper-horizontal .step .step-bar-right {
+    position: absolute;
+    top: calc(2rem + 5px);
+    height: 5px;
+    background-color: #D9E2EC;
+    border: solid #D9E2EC;
+    border-width: 2px 0;
+}
+
+.stepper-horizontal .step .step-bar-left {
+    width: calc(100% - 2rem);
+    left: 50%;
+    margin-left: 1rem;
+    z-index: -1;
+}
+
+.stepper-horizontal .step .step-bar-right {
+    width: 0;
+    left: 50%;
+    margin-left: 1rem;
+    z-index: -1;
+    transition: width 500ms ease-in-out;
+}
+
+.stepper-horizontal .step.done .step-bar-right {
+    background-color: #199473;
+    border-color: #199473;
+    z-index: 3;
+    width: calc(100% - 1rem);
+}
+
+/* Styling for the "Next" button */
+.next-button {
+    display: inline-block;
+    width: auto; /* Adjust width based on content */
+    padding: 0.5rem 1.5rem; /* Adjust padding for height */
+    background: linear-gradient(135deg, #38a169, #2f855a);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 10px auto; /* Reduced margin */
+    height: auto; /* Ensure height is determined by padding */
+}
+
+/* Remove vertical space and adjust button size */
+.next-button {
+    display: block;
+    width: 200px; /* Set a fixed width */
+    height: 40px; /* Set a fixed height */
+    padding: 0.5rem; /* Adjust padding to fit the height */
+    font-size: 1rem; /* Ensure font size fits the button */
+    margin: 10px auto; /* Adjust margin to reduce space */
+}
+
+.next-button:hover {
+    background: linear-gradient(135deg, #2f855a, #38a169);
+    transform: scale(1.05);
+}
+
+.next-button:active {
+    background: linear-gradient(135deg, #2f855a, #38a169);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

@@ -1,172 +1,212 @@
+/* Styling the container to make it responsive */
 .container {
     width: 90vw;
     margin: 0.5rem auto;
     padding: 1rem;
 }
 
+/* Adjusting the layout for even spacing */
 .even-columns {
     display: flex;
     gap: 2em;
+    flex-wrap: wrap; /* Makes the layout responsive */
 }
 
-.box{
+/* Centering and giving uniform padding to each box */
+.box {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    background-color: rgba(240, 240, 240, 0.9); /* White background with opacity */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds soft shadow for depth */
+    transition: transform 0.3s ease; /* Adds a subtle hover effect */
+    opacity: 0.9; /* Slight opacity for all boxes */
 }
 
-.container > * {
-    background-color: 	#E5E4E2;
-    padding: 1rem;
-    width: 33%;
-
+.box:hover {
+    transform: scale(1.05); /* On hover, slightly enlarge the box */
 }
 
-#head{
-    font-size: 25px;
-    justify-content: center;
-    text-align: center;
-    margin-top: 2%;
-    margin-bottom: 2%;
-}
-
-#head1{
-    font-size: 25px;
-    justify-content: center;
-    margin-top: 1%;
-    margin-bottom: 1%;
-}
-
-#body{
-    margin-top: 2%;
-    font-size: 20px;
-
-}
-
-.about{
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    /* margin-top: 2%; */
-    margin-bottom: 2%;
-    /* margin-left: 45%; */
-}
-
-#body1{
-    margin-left: 20%;
-    margin-right: 20%;
-    font-size: 25px;
-    line-height: 120%;
-}
-
-.back{
-    background-image: url("../../assets/images/shutterstock_753807385-2560x852.jpg");
-    background-repeat: no-repeat;
-}
-
-.home-card {
-    /* border-radius: 4px; */
-    margin-left: 10%;
+/* New About Us Box Styling */
+.about-box {
+    background-color: rgba(255, 255, 255, 0.9); /* White background with opacity */
+    padding: 2rem;
+    margin: 2rem auto; /* Margin for spacing */
     max-width: 80%;
-    max-height: 80%;
-    margin-top: 0%;
-    margin-bottom: 2%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Same shadow for consistency */
+    opacity: 0.9; /* Slight opacity */
+}
+
+/* Headings */
+#head {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #3f51b5;
+}
+
+#body {
+    margin-top: 1rem;
+    font-size: 18px;
+    color: #555;
+}
+
+/* About Us Section */
+#head1 {
+    font-size: 28px;
+    text-align: center;
+    color: #3f51b5;
+    margin-bottom: 1rem;
+}
+
+#body1 {
+    margin: 0 15%;
+    font-size: 22px;
+    line-height: 1.5;
+    color: #333;
+    text-align: center; /* Center the text or adjust based on your design */
+}
+
+/* Adjust spacing and styling for paragraph tags if needed */
+p {
+    margin: 0 0 1rem 0; /* Adjust margin as needed */
+}
+
+/* Background for the 'About Us' section */
+.back {
+    background-image: url("../../assets/images/about.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 3rem 0;
+}
+
+/* Card styling */
+.home-card {
+    margin: 2rem auto;
+    max-width: 80%;
     padding: 0;
-
-    .mat-card-image {
-      margin: 0;
-      height: 100%;
-    }
-
-    .home-card-content {
-      display: flex;
-      justify-content: space-between;
-
-      & > * {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex: auto;
-        max-width: 50%;
-
-        &:first-child {
-          border-top-left-radius: 4px;
-          border-bottom-left-radius: 4px;
-        }
-
-        &:last-child {
-          flex-direction: column;
-          align-items: start;
-          padding: 8px;
-        }
-      }
-    }
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-#heading{
-    font-size: 40px;
-    line-height: 120%;
-}
-
-#content{
-    font-size: 20px;
-}
-
-.subscribe{
-    width: 90vw;
-    margin: 0.5rem auto;
-    padding: 1rem;
-    background-color: #3f51b5;
-}
-
-.box1{
-    margin-top: 0.2rem auto;
-    margin-bottom: 0.2rem auto;
-    margin-left: 0.1rem auto;
-    margin-right: 0.1rem auto;
-    padding: 1.5rem;
-    background-color: white;
+.home-card-content {
     display: flex;
-    justify-content: center;
-    flex-direction: row;
-}
-#subsbox{
-    font-size: 20px;
+    align-items: center;
+    gap: 2rem;
 }
 
-.sub{
-    margin-left: 1%;
+.image-container {
+    flex: 1 1 40%;
+}
+
+.text-container {
+    flex: 1 1 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Adds rounded corners if desired */
+}
+
+#heading {
+    font-size: 2.5vw;
+    line-height: 1.2;
+    color: #3f51b5;
+    margin-bottom: 1rem;
+}
+
+#content {
+    font-size: 1.5vw;
+    color: #555;
+}
+
+/* Subscribe Box */
+.subscribe {
+    width: 80vw;
+    margin: 2rem auto;
+    padding: 2rem;
     background-color: #3f51b5;
     color: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Adds a deep shadow */
+    text-align: center;
 }
 
-input{
-    margin-left: 1%;
-}
-
-.social{
+.box1 {
     display: flex;
     justify-content: center;
-    text-align: center;
-    margin: 2%;
-    font-size: 50px;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.logos{
-    flex-direction: row;
+#subsbox {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.sub {
+    margin-left: 1rem;
+    background-color: #ff5722; /* New accent color */
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sub:hover {
+    background-color: #e64a19; /* Slightly darker on hover */
+}
+
+input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 300px;
+    font-size: 16px;
+}
+
+/* Social Section */
+.social {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 2rem;
+    color: #333;
 }
 
 .container1 {
-    width: 90vw;
-    margin: 0.5rem auto;
-    /* padding: 1rem; */
+    display: flex;
     justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
 }
 
 .container1 > * {
-    /* background-color: 	#E5E4E2; */
-    padding: 1rem;
-    width: 8%;
+    width: 50px;
+}
+
+.container1 img {
+    width: 100%;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.container1 img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
 }

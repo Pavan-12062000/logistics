@@ -1,0 +1,18 @@
+<div class="profile-container">
+    <div class="profile-card">
+      <div class="profile-image">
+        <img src="assets/images/user-avatar.png" alt="User Avatar">
+      </div>
+      <h2 class="user-name">{{ user.name }}</h2>
+      <p class="user-role">{{ user.role }}</p>
+      <button class="edit-btn" (click)="editProfile()">Edit Profile</button>
+      
+      <div class="profile-details">
+        <h3>Details</h3>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Phone:</strong> {{ user.phone }}</p>
+        <p><strong>Location:</strong> {{ user.location }}</p>
+      </div>
+    </div>
+  </div>
+  

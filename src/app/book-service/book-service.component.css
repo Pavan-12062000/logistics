@@ -1,0 +1,201 @@
+/* General Container Styling */
+.booking-container {
+    max-width: 700px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1.2s ease-in-out;
+    border: 2px solid #f0f0f0;
+}
+
+.booking-container h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05rem;
+    font-weight: 600;
+}
+
+/* Form Styling */
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Form Group Styling */
+.form-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+/* Form Control Styling */
+.form-control {
+    padding: 0.85rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
+}
+
+/* Focus Effects */
+.form-control:focus {
+    border-color: #5DADE2;
+    box-shadow: 0 0 8px rgba(93, 173, 226, 0.4);
+    outline: none;
+    transform: scale(1.02);
+}
+
+/* Error Styling */
+.error {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.error.ng-touched {
+    opacity: 1;
+}
+
+/* Dropdown Styling */
+.form-group select {
+    padding: 0.85rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    appearance: none; /* Hide default arrow */
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"%3E%3Cpath fill="none" stroke="%2334495e" stroke-width="2" d="M6 9l6 6 6-6"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.25rem;
+    padding-right: 2.5rem; /* Add padding to make room for the arrow */
+}
+
+/* Additional Fields Styling */
+.additional-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Checkbox Styling */
+.checkbox-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.checkbox-container input {
+    appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid #34495e;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    outline: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    position: relative;
+}
+
+/* Checkbox Styling continued */
+.checkbox-container input:checked {
+    background-color: #5DADE2;
+    border-color: #5DADE2;
+}
+
+.checkbox-container input:checked::after {
+    content: '\2714';
+    color: white;
+    font-size: 1.25rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.checkbox-label {
+    color: #34495e;
+    font-size: 0.9rem;
+}
+
+/* Button Styling */
+button {
+    padding: 0.85rem;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(41, 128, 185, 0.3);
+}
+
+button:hover {
+    background-color: #3498db;
+    transform: scale(1.05);
+}
+
+button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes buttonHoverEffect {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}

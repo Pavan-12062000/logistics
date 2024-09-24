@@ -13,11 +13,11 @@
       >{{ link.label }}</a>
     </ng-container>
     <ng-container *ngIf="isAuthenticated; else loginRegister">
-      <span>Hi, {{ username }}</span>
       <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon>person</mat-icon>
+        <mat-icon>menu</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="profile()">Profile</button>
         <button mat-menu-item (click)="logout()">Logout</button>
       </mat-menu>
     </ng-container>

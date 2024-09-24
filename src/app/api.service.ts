@@ -13,11 +13,26 @@ export class ApiService {
   }
 
   loginUser(user:any): Observable<any>{
-    console.log("user", user);
     return this.http.post<any>(`${this.apiurl}/login`, user);
   }
 
   contact(user:any):Observable<any>{
     return this.http.post<any>(`${this.apiurl}/contact`, user);
+  }
+
+  getQuote(user:any):Observable<any>{
+    return this.http.post<any>(`${this.apiurl}/quote`, user);
+  }
+
+  subscribeEmail(user:any):Observable<any>{
+    return this.http.post<any>(`${this.apiurl}/subscribe`, user);
+  }
+
+  trackOrder(user:any):Observable<any>{
+    return this.http.post<any>(`${this.apiurl}/track`, user);
+  }
+
+  updateOrderStatus(user:any):Observable<any>{
+    return this.http.put<any>(`${this.apiurl}/updateTrack`, user);
   }
 }
